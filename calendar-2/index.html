@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="css/evo-calendar.css" />
+    <!-- Optional Themes -->
+    <link rel="stylesheet" href="css/evo-calendar.midnight-blue.css" />
+    <link rel="stylesheet" href="css/evo-calendar.orange-coral.css" />
+    <link rel="stylesheet" href="css/evo-calendar.royal-navy.css" />
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/evo-calendar.js"></script>
+</head>
+
+<body>
+    <div id="evoCalendar"></div>
+    <script>
+        let myEvents = [
+            {
+                id: "required-id-1",
+                name: "New Year",
+                date: "Wed Jan 01 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
+                type: "holiday",
+                everyYear: true
+            },
+            {
+                id: "required-id-2",
+                name: "Valentine's Day",
+                date: "Fri Feb 14 2020 00:00:00 GMT-0800 (Pacific Standard Time)",
+                type: "holiday",
+                everyYear: true,
+                color: "#222"
+            },
+            {
+                id: "required-id-3",
+                name: "Custom Date",
+                badge: "08/03 - 08/05",
+                date: ["August/03/2020", "August/05/2020"],
+                description: "Description here",
+                type: "event",
+            },
+            // more events here
+        ];
+
+        $('#evoCalendar').evoCalendar({
+            calendarEvents: myEvents,
+            format: 'mm/dd/yyyy',
+            titleFormat: 'MM yyyy',
+            eventHeaderFormat: 'MM d, yyyy',
+            language: 'ind',
+            theme: 'Orange Coral', // Midnight Blue, Royal Navy, Orange Coral
+            sidebarToggler: true,
+            sidebarDisplayDefault: true,
+            eventListToggler: true,
+            eventDisplayDefault: true,
+        });
+    </script>
+</body>
+
+</html>
